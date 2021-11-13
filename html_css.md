@@ -514,3 +514,188 @@ https://www.w3schools.com/css/css_table.asp
 -video
 
 - 크기 조정, 배치 => BOX Styling
+
+## Box Model
+
+https://www.w3schools.com/css/css_boxmodel.asp
+
+- HTML element는 박스형태로 표현(디자인)
+- Box Model 구성요소
+- content : width(가로길이), height(세로길이)
+- padding(안쪽 여백)
+- border(테두리)
+- magine(바깥 여백)
+- - background(배경) - 박스모델과 연관
+  * backgroud 적용 범위 : content, padding 까지 적용
+
+### heigh/width
+
+https://www.w3schools.com/css/css_dimension.asp
+
+- 기본 특징 : height/width를 지정하지 않았을 때 특징
+
+  - block
+    - heigh : 자식요소를 기준으로 맞춰짐
+    - width : 부모요소를 기준으로 채워짐
+  - inline
+    - heigh/width : 자식요소를 기준으로 맞춰짐
+
+- px : 수치값으로 고정
+- % : 상대적인 크기
+  - 부모 요소를 기준으로 상대적 크기 지정
+  - 부모의 크기가 변경되면 따라서 변경됨(유동형:fluid)
+
+### padding
+
+https://www.w3schools.com/css/css_padding.asp
+
+> 방향 적용 순서(top에서 시작 시계방향 순서로 적용)
+>
+> top -> right -> bootom ->left
+
+- padding-top
+- padding-right
+- padding-botom
+- padding-left
+
+- padding 축약 표현(shorthand)
+  '''
+  padding:10px 20px 30px 40px;
+  padding:10px 20px 30px;
+  padding:10px 20px;
+  padding:10px;
+  '''
+
+### border
+
+https://www.w3schools.com/css/css_border.asp
+
+- boerder 축약표현(shorthand)
+  '''
+  boerder:1px solid red; \*방향 지정
+  border-top:1px solid red;
+  border-right:1px solid red;
+  border-botom:1px solid red;
+  border-left:1px solid red;
+  '''
+
+### margin
+
+- padding과 같음
+
+- margin collapse(충돌/상쇄)
+  https://www.w3schools.com/css/css_margin.asp
+  - 박스가 위아래 방향으로 놓여있을 때 생기는 현상(좌우 방향에서는 생기지 않음)
+  - 위아래 놓여있는 박스의 사이에 margin을 적용했을 때 margin이 합쳐지지 않고 큰 margin만 적용
+  - 위아래 인접해있는 박스 사이의 margin을 적용할 때 박스 한쪽을 기준으로 적용
+
+### background
+
+https://www.w3schools.com/css/css_background.asp
+
+- 배경색
+  - background-color
+- 배경이미지
+
+  - background-image
+  - background-repeat : 배경이미지 반복여부
+  - background-position : 배경이미지 위치
+  - background-attachment : 배경이미지 고정여부
+
+- 투명도
+
+  - opacity, transparency, alpha
+
+- opacity
+  '''
+  p{
+  opacity:0.5; /_ 요소 전체를 0.5만큼 반투명 설정 _/
+  }
+  '''
+
+- transprency
+  '''
+  h1{
+  background-color:transparent; /_ 투명 배경 _/
+  }
+  '''
+- alpha
+  '''
+  div{
+  background-color:rgba(200, 135, 80, 0.5) /\* 배경색에서 투명도 설정
+  }
+
+- background-repeat
+
+  - repeat-x, repeat-y, no-repeat
+
+- background-position
+
+  - Left, center, right / top, center, bottom
+  - px
+    '''
+    h1{
+    background-position : value1 value2
+    /_
+    value1 : 가로방향
+    value2 : 세로방향
+    _/
+    }
+    '''
+
+    - background-attachment
+
+      - fixed
+
+    - background 축약 표현(shorthand)
+
+    - background-size
+      - contain, cover
+
+### 박스 모델 적용
+
+- block : 좌우로 나란히 배치가 안됨
+- inline : 박스모델 제대로 적용되지 않음
+- inline-block : 인라인 요소 특징(나란히 배치)과 블럭요소 특징(박스모델이 적용)
+
+- display : 화면에 표시되는 박스 성질을 변경
+  - block, inline, inline-block에서 인라인요소의 단점 : 제어할 수 없는 여백
+  - none : 화면에 표시하지 않음
+  - flex :
+
+### 박스 크기 계산
+
+- width/height, padding, border가 박스 크기 계산에 적요오디는 구성요소
+- box-sizing: border-box; 적용하면 width/height가 박스 전체길이로 적용됨
+
+## HTML structure styling - layout
+
+- -박스 배치 -가로 -세로
+
+- 규칙
+  - 가로, 세로 방향으로 배치될 때
+
+### Flexbox
+
+- 부모요소에 적용하는 css property
+  - 레이아웃과 연관되는 property
+- 자식요소(배치되는 박스)에 적용하는 css property
+
+- display:flex;적용
+- flexbox 적용했을 때 width/height의 기본 특징이 뒤바뀜
+
+-flex-direction
+
+- column(세로), row(가로)
+- column : 축이 90도 회전 =>가로 방향 정렬: align-items
+
+-flex-wrap
+-wrap : 자식요소의 크기를 유지하면서 박스가 줄바꿈되어 표시
+
+- justify-content
+
+  - flex-start, center, flex-end, space-around, space-between
+
+  -align-items
+
+  - flex-start, center, flex-end
